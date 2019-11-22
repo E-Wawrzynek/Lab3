@@ -28,19 +28,34 @@ module Complete(
 	input 		     [9:0]		SW
 );
 
+	assign LEDR[6:4] = 1'b0;
 
+	//currently ALL seven segs blanked, need to use some to display state of state machine
+	SevenSeg U0(.H(HEX0), .NUM(8'd88));
+	SevenSeg U1(.H(HEX1), .NUM(8'd88));
+	SevenSeg U2(.H(HEX2), .NUM(8'd88));
+	SevenSeg U3(.H(HEX3), .NUM(8'd88));
+	SevenSeg U4(.H(HEX4), .NUM(8'd88));
+	SevenSeg U5(.H(HEX5), .NUM(8'd88));
 
-//=======================================================
-//  REG/WIRE declarations
-//=======================================================
+	reg reset_latch = 1'b0;
 
+	always @(negedge KEY[0])
+		begin
+			reset_latch <= ~reset_latch;
+		end
 
+	wire turn_side_w;
+	reg turn_side_r = 1'b0;
+	assign SW[1] = turn_side_w;
 
-
-//=======================================================
-//  Structural coding
-//=======================================================
-
+	always @(negedge KEY[1])
+		begin
+			if(SW[1] == 1)
+				turn_side_r <= 1'b1;
+			else
+				turn_side_r <= 1'b0;
+		end
 
 
 endmodule
