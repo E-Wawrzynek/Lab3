@@ -31,7 +31,7 @@ module Complete(
 	assign LEDR[6:4] = 1'b0;
 
 	//currently ALL seven segs blanked, need to use some to display state of state machine
-	SevenSeg U0(.H(HEX0), .NUM(8'd88));
+	//SevenSeg U0(.H(HEX0), .NUM(8'd88));
 	SevenSeg U1(.H(HEX1), .NUM(8'd88));
 	SevenSeg U2(.H(HEX2), .NUM(8'd88));
 	SevenSeg U3(.H(HEX3), .NUM(8'd88));
