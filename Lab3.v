@@ -45,6 +45,10 @@ module Complete(
 			reset_latch <= ~reset_latch;
 		end
 
+	wire s_clk;
+
+	clock_divider #(5_000_000) C0(.clk(ADC_CLK_10), .reset_n(reset_latch), .slower_clk(s_clk));
+
 	wire turn_side_w;
 	reg turn_side_r = 1'b0;
 	assign SW[1] = turn_side_w;
@@ -57,5 +61,10 @@ module Complete(
 				turn_side_r <= 1'b0;
 		end
 
+
+	parameter IDLE = 3'b000;
+	parameter HAZARDS = 3'b001;
+	parameter TURN_LEFT = 3'b010;
+	parameter TURN_RIGHT = 3'b100;
 
 endmodule
