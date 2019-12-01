@@ -49,9 +49,9 @@ module Complete(
 
 	clock_divider #(5_000_000) C0(.clk(ADC_CLK_10), .reset_n(reset_latch), .slower_clk(s_clk));
 
-	wire turn_side_w;
+	//wire turn_side_w;
 	reg turn_side_r = 1'b0;
-	assign SW[1] = turn_side_w;
+	//assign SW[1] = turn_side_w;
 
 	always @(negedge KEY[1])
 		begin
@@ -67,4 +67,5 @@ module Complete(
 	parameter TURN_LEFT = 3'b010;
 	parameter TURN_RIGHT = 3'b100;
 
+	NSL(.clk(s_clk), .reset_n(reset_latch), .CurrentState())
 endmodule
