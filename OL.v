@@ -1,55 +1,72 @@
 module OL(
     input [2:0] CurrentState,
     input [1:0] SW,
-    input turn_side,
+    //input turn_side,
     output [7:0] HEX0,
-    output [2:0] LEDR_L,
-    output [2:0] LEDR_R
+    output reg [2:0] LEDR_L,
+    output reg [2:0] LEDR_R
 );
 
     parameter IDLE = 3'b000;
 	parameter HAZARDS = 3'b001;
 	parameter TURN_LEFT = 3'b010;
-	parameter TURN_RIGHT = 3'b100;
+	parameter TURN_RIGHT = 3'b011;
 
-    reg ledr;
-    reg ledl;
-    reg ledh;
+    reg hazard_r = 1'b0;
+    reg turn_cnt = 3'b000;
 
     always @(CurrentState)
         begin
             case(CurrentState)
             IDLE: 
                 begin
-                    ledr = 0;
-                    ledl = 0;
-                    ledh = 0;
+                    LEDR_L <= 3'b000;
+                    LEDR_R <= 3'b000;
                 end
             HAZARDS:
                 begin
-                    ledr = 1;
-                    ledl = 1;
-                    ledh = 1;
+                    if(hazard_r == 1'b0)
+                        begin
+                            LEDR_L <= 3'b000;
+                            LEDR_R <= 3'b000;
+                        end
+                    else if(hazard_r == 1'b1)
+                        begin
+                            LEDR_L <= 3'b111;
+                            LEDR_R <= 3'b111;
+                        end
+                    hazard_r <= ~hazard_r;
                 end
             TURN_LEFT:
                 begin
-                    ledr = 0;
-                    ledl = 1;
-                    ledh = 0;
+                    case(turn_cnt)
+                    3'b001: LEDR_L <= 3'b001;
+                    3'b010: LEDR_L <= 3'b010;
+                    3'b011: LEDR_L <= 3'b100;
+                    default: LEDR_L <= 3'b000;
+                    endcase
+                    if(turn_cnt == 3'b011)
+                        turn_cnt <= 3'b000;
+                    else
+                        turn_cnt <= turn_cnt + 1;
                 end
             TURN_RIGHT:
                 begin
-                    ledr = 1;
-                    ledl = 0;
-                    ledh = 0;
+                    case(turn_cnt)
+                    3'b001: LEDR_R <= 3'b100;
+                    3'b010: LEDR_R <= 3'b010;
+                    3'b011: LEDR_R <= 3'b001;
+                    default: LEDR_R <= 3'b000;
+                    endcase
+                    if(turn_cnt == 3'b011)
+                        turn_cnt <= 3'b000;
+                    else
+                        turn_cnt <= turn_cnt + 1;
                 end
             endcase 
         end
 
-    assign LEDR_L[0] = ledr;
-    assign LEDR_L[1] = ledl;
-    assign LEDR_L[2] = ledh;
-    
+
     reg[7:0] num;
 
     always @(CurrentState)

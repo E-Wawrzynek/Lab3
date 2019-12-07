@@ -16,17 +16,17 @@ module NSL(
         begin
             if(SW[0] == 1)
                 begin
-                    NextState_temp = HAZARDS; //3'b001; //hazards
+                    NextState_temp <= HAZARDS; //3'b001; //hazards
                 end
             else if(SW[1] == 1)
                 begin
                     if(turn_side_r == 0)
-                        NextState_temp = TURN_LEFT; //3'b010; //turn left
+                        NextState_temp <= TURN_LEFT; //3'b010; //turn left
                     else if(turn_side_r == 1)
-                        NextState_temp = TURN_RIGHT; //3'b100; //turn right
+                        NextState_temp <= TURN_RIGHT; //3'b100; //turn right
                 end
             else
-                NextState_temp = IDLE; //3'b000; //idle
+                NextState_temp <= IDLE; //3'b000; //idle
         end
     
     assign NextState = NextState_temp;

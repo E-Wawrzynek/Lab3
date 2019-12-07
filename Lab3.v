@@ -53,12 +53,16 @@ module Lab3(
 	reg turn_side_r = 1'b0;
 	//assign SW[1] = turn_side_w;
 
+	// always @(negedge KEY[1])
+	// 	begin
+	// 		if(SW[1] == 1)
+	// 			turn_side_r <= 1'b1;
+	// 		else
+	// 			turn_side_r <= 1'b0;
+	// 	end
 	always @(negedge KEY[1])
 		begin
-			if(SW[1] == 1)
-				turn_side_r <= 1'b1;
-			else
-				turn_side_r <= 1'b0;
+			turn_side_r <= ~turn_side_r;
 		end
 
 
@@ -72,6 +76,6 @@ module Lab3(
 
 	CSL S0(.clk(s_clk), .reset_n(reset_latch), .NextState(NextState), .CurrentState(CurrentState));
 	NSL N0(.CurrentState(CurrentState), .SW(SW[1:0]), .turn_side_r(turn_side_r), .NextState(NextState));
-	OL O0(.CurrentState(CurrentState), .SW(SW[1:0]), .turn_side(turn_side_r), .HEX0(HEX0), .LEDR_L(LEDR[9:7]), .LEDR_R(LEDR[2:0]));
+	OL O0(.CurrentState(CurrentState), .SW(SW[1:0]), .HEX0(HEX0), .LEDR_L(LEDR[9:7]), .LEDR_R(LEDR[2:0]));
 
 endmodule
