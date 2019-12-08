@@ -13,18 +13,17 @@ module OL(
 	parameter TURN_RIGHT = 3'b011;
 
     reg hazard_r = 1'b0;
-    reg turn_cnt = 3'b000;
+    reg turn_cnt= 2'b00;
 
     always @(CurrentState)
         begin
             case(CurrentState)
-            IDLE: 
-                begin
+            IDLE: begin
                     LEDR_L <= 3'b000;
                     LEDR_R <= 3'b000;
                 end
-            HAZARDS:
-                begin
+            HAZARDS: begin
+                    hazard_r <= ~hazard_r;
                     if(hazard_r == 1'b0)
                         begin
                             LEDR_L <= 3'b000;
@@ -35,31 +34,28 @@ module OL(
                             LEDR_L <= 3'b111;
                             LEDR_R <= 3'b111;
                         end
-                    hazard_r <= ~hazard_r;
                 end
-            TURN_LEFT:
-                begin
+            TURN_LEFT: begin
                     case(turn_cnt)
-                    3'b001: LEDR_L <= 3'b001;
-                    3'b010: LEDR_L <= 3'b010;
-                    3'b011: LEDR_L <= 3'b100;
+                    2'b01: LEDR_L <= 3'b001;
+                    2'b10: LEDR_L <= 3'b010;
+                    2'b11: LEDR_L <= 3'b100;
                     default: LEDR_L <= 3'b000;
                     endcase
-                    if(turn_cnt == 3'b011)
-                        turn_cnt <= 3'b000;
+                    if(turn_cnt == 2'b11)
+                        turn_cnt <= 2'b00;
                     else
                         turn_cnt <= turn_cnt + 1;
                 end
-            TURN_RIGHT:
-                begin
+            TURN_RIGHT: begin
                     case(turn_cnt)
-                    3'b001: LEDR_R <= 3'b100;
-                    3'b010: LEDR_R <= 3'b010;
-                    3'b011: LEDR_R <= 3'b001;
+                    2'b01: LEDR_R <= 3'b100;
+                    2'b10: LEDR_R <= 3'b010;
+                    2'b11: LEDR_R <= 3'b001;
                     default: LEDR_R <= 3'b000;
                     endcase
-                    if(turn_cnt == 3'b011)
-                        turn_cnt <= 3'b000;
+                    if(turn_cnt == 2'b11)
+                        turn_cnt <= 2'b00;
                     else
                         turn_cnt <= turn_cnt + 1;
                 end
@@ -70,7 +66,7 @@ module OL(
     reg[7:0] num;
 
     always @(CurrentState)
-        num = CurrentState;
+        num <= CurrentState;
 
     SevenSeg S0(.H(HEX0), .NUM(num));
 

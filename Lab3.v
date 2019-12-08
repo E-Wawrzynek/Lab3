@@ -28,7 +28,7 @@ module Lab3(
 	input 		     [9:0]		SW
 );
 
-	assign LEDR[6:4] = 1'b0;
+	assign LEDR[6:3] = 4'b0000;
 
 	//currently ALL seven segs blanked, need to use some to display state of state machine
 	//SevenSeg U0(.H(HEX0), .NUM(8'd88));

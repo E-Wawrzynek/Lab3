@@ -19,7 +19,7 @@ module tb_OL();
     OL O0(
     .CurrentState(CurrentState),
     .SW(sw),
-    .turn_side(turnstate),
+    //.turn_side(turnstate),
     .HEX0(HEX0),
     .LEDR_L(led1),
     .LEDR_R(led2)

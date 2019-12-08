@@ -1,5 +1,5 @@
 $date
-	Fri Dec 06 17:23:59 2019
+	Sat Dec 07 20:32:50 2019
 $end
 $version
 	Icarus Verilog
@@ -10,772 +10,756 @@ $end
 $scope module Lab3 $end
 $var wire 1 ! ADC_CLK_10 $end
 $var wire 2 " KEY [1:0] $end
-$var wire 10 # LEDR [9:0] $end
-$var wire 1 $ MAX10_CLK1_50 $end
-$var wire 1 % MAX10_CLK2_50 $end
-$var wire 10 & SW [9:0] $end
-$var wire 1 ' clk $end
-$var wire 1 ( reset_n $end
-$var wire 1 ) s_clk $end
-$var wire 3 * NextState [2:0] $end
-$var wire 8 + HEX5 [7:0] $end
-$var wire 8 , HEX4 [7:0] $end
-$var wire 8 - HEX3 [7:0] $end
-$var wire 8 . HEX2 [7:0] $end
-$var wire 8 / HEX1 [7:0] $end
-$var wire 8 0 HEX0 [7:0] $end
-$var wire 3 1 CurrentState [2:0] $end
-$var reg 1 2 reset_latch $end
-$var reg 1 3 turn_side_r $end
+$var wire 1 # MAX10_CLK1_50 $end
+$var wire 1 $ MAX10_CLK2_50 $end
+$var wire 10 % SW [9:0] $end
+$var wire 1 & s_clk $end
+$var wire 3 ' NextState [2:0] $end
+$var wire 10 ( LEDR [9:0] $end
+$var wire 8 ) HEX5 [7:0] $end
+$var wire 8 * HEX4 [7:0] $end
+$var wire 8 + HEX3 [7:0] $end
+$var wire 8 , HEX2 [7:0] $end
+$var wire 8 - HEX1 [7:0] $end
+$var wire 8 . HEX0 [7:0] $end
+$var wire 3 / CurrentState [2:0] $end
+$var reg 1 0 reset_latch $end
+$var reg 1 1 turn_side_r $end
 $scope module C0 $end
 $var wire 1 ! clk $end
-$var wire 1 2 reset_n $end
-$var wire 1 ) slower_clk $end
-$var reg 24 4 div_cntr [23:0] $end
-$var reg 1 5 slw_clk $end
+$var wire 1 0 reset_n $end
+$var wire 1 & slower_clk $end
+$var reg 24 2 div_cntr [23:0] $end
+$var reg 1 3 slw_clk $end
 $upscope $end
 $scope module N0 $end
-$var wire 2 6 KEY [1:0] $end
-$var wire 3 7 NextState [2:0] $end
-$var wire 2 8 SW [1:0] $end
-$var wire 3 9 CurrentState [2:0] $end
-$var reg 3 : NextState_temp [2:0] $end
+$var wire 3 4 NextState [2:0] $end
+$var wire 2 5 SW [1:0] $end
+$var wire 1 1 turn_side_r $end
+$var wire 3 6 CurrentState [2:0] $end
+$var reg 3 7 NextState_temp [2:0] $end
 $upscope $end
 $scope module O0 $end
-$var wire 3 ; LEDR_L [2:0] $end
-$var wire 3 < LEDR_R [2:0] $end
-$var wire 2 = SW [1:0] $end
-$var wire 1 3 turn_side $end
-$var wire 8 > HEX0 [7:0] $end
-$var wire 3 ? CurrentState [2:0] $end
-$var reg 1 @ ledh $end
-$var reg 1 A ledl $end
-$var reg 1 B ledr $end
-$var reg 8 C num [7:0] $end
+$var wire 2 8 SW [1:0] $end
+$var wire 8 9 HEX0 [7:0] $end
+$var wire 3 : CurrentState [2:0] $end
+$var reg 3 ; LEDR_L [2:0] $end
+$var reg 3 < LEDR_R [2:0] $end
+$var reg 1 = hazard_r $end
+$var reg 8 > num [7:0] $end
+$var reg 1 ? turn_cnt $end
 $scope module S0 $end
-$var wire 8 D H [7:0] $end
-$var wire 8 E NUM [7:0] $end
-$var reg 8 F value [7:0] $end
+$var wire 8 @ H [7:0] $end
+$var wire 8 A NUM [7:0] $end
+$var reg 8 B value [7:0] $end
 $upscope $end
 $upscope $end
 $scope module S0 $end
-$var wire 8 G HEX0 [7:0] $end
-$var wire 3 H LEDR_L [2:0] $end
-$var wire 3 I LEDR_R [2:0] $end
-$var wire 3 J NextState [2:0] $end
-$var wire 2 K SW [1:0] $end
-$var wire 1 ' clk $end
-$var wire 1 ( reset_n $end
-$var wire 1 L turn_side $end
-$var reg 3 M CurrentState [2:0] $end
+$var wire 3 C NextState [2:0] $end
+$var wire 1 & clk $end
+$var wire 1 0 reset_n $end
+$var reg 3 D CurrentState [2:0] $end
 $upscope $end
 $scope module U1 $end
+$var wire 8 E H [7:0] $end
+$var wire 8 F NUM [7:0] $end
+$var reg 8 G value [7:0] $end
+$upscope $end
+$scope module U2 $end
+$var wire 8 H H [7:0] $end
+$var wire 8 I NUM [7:0] $end
+$var reg 8 J value [7:0] $end
+$upscope $end
+$scope module U3 $end
+$var wire 8 K H [7:0] $end
+$var wire 8 L NUM [7:0] $end
+$var reg 8 M value [7:0] $end
+$upscope $end
+$scope module U4 $end
 $var wire 8 N H [7:0] $end
 $var wire 8 O NUM [7:0] $end
 $var reg 8 P value [7:0] $end
 $upscope $end
-$scope module U2 $end
+$scope module U5 $end
 $var wire 8 Q H [7:0] $end
 $var wire 8 R NUM [7:0] $end
 $var reg 8 S value [7:0] $end
 $upscope $end
-$scope module U3 $end
-$var wire 8 T H [7:0] $end
-$var wire 8 U NUM [7:0] $end
-$var reg 8 V value [7:0] $end
-$upscope $end
-$scope module U4 $end
-$var wire 8 W H [7:0] $end
-$var wire 8 X NUM [7:0] $end
-$var reg 8 Y value [7:0] $end
-$upscope $end
-$scope module U5 $end
-$var wire 8 Z H [7:0] $end
-$var wire 8 [ NUM [7:0] $end
-$var reg 8 \ value [7:0] $end
-$upscope $end
 $upscope $end
 $scope module tb_OL $end
-$var wire 3 ] CurrentState [2:0] $end
-$var wire 8 ^ HEX0 [7:0] $end
-$var wire 3 _ led1 [2:0] $end
-$var wire 3 ` led2 [2:0] $end
-$var wire 2 a sw [1:0] $end
-$var wire 1 b turnstate $end
-$var reg 3 c CS [2:0] $end
-$var reg 8 d H0 [7:0] $end
-$var reg 1 e Rn $end
-$var reg 1 f clk $end
-$var reg 3 g l1 [2:0] $end
-$var reg 3 h l2 [2:0] $end
+$var wire 3 T CurrentState [2:0] $end
+$var wire 8 U HEX0 [7:0] $end
+$var wire 3 V led1 [2:0] $end
+$var wire 3 W led2 [2:0] $end
+$var wire 2 X sw [1:0] $end
+$var reg 3 Y CS [2:0] $end
+$var reg 8 Z H0 [7:0] $end
+$var reg 1 [ Rn $end
+$var reg 1 \ clk $end
+$var reg 3 ] l1 [2:0] $end
+$var reg 3 ^ l2 [2:0] $end
 $scope module O0 $end
-$var wire 3 i CurrentState [2:0] $end
-$var wire 8 j HEX0 [7:0] $end
-$var wire 3 k LEDR_L [2:0] $end
-$var wire 3 l LEDR_R [2:0] $end
-$var wire 2 m SW [1:0] $end
-$var wire 1 b turn_side $end
-$var reg 1 n ledh $end
-$var reg 1 o ledl $end
-$var reg 1 p ledr $end
-$var reg 8 q num [7:0] $end
+$var wire 3 _ CurrentState [2:0] $end
+$var wire 8 ` HEX0 [7:0] $end
+$var wire 2 a SW [1:0] $end
+$var reg 3 b LEDR_L [2:0] $end
+$var reg 3 c LEDR_R [2:0] $end
+$var reg 1 d hazard_r $end
+$var reg 8 e num [7:0] $end
+$var reg 1 f turn_cnt $end
 $scope module S0 $end
-$var wire 8 r H [7:0] $end
-$var wire 8 s NUM [7:0] $end
-$var reg 8 t value [7:0] $end
+$var wire 8 g H [7:0] $end
+$var wire 8 h NUM [7:0] $end
+$var reg 8 i value [7:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-bx t
-bx s
-bx r
-bx q
-xp
-xo
-xn
-bz m
-b0 l
-b0 k
-bx j
 bx i
-b0 h
-b0 g
+bx h
+bx g
 0f
-0e
-b0 d
+bx e
+0d
 bx c
-zb
+bx b
 bz a
-b0 `
-b0 _
-bx ^
-bx ]
-b11111111 \
-b1011000 [
-b11111111 Z
-b11111111 Y
-b1011000 X
-b11111111 W
-b11111111 V
-b1011000 U
-b11111111 T
+bx `
+bx _
+b0 ^
+b0 ]
+0\
+0[
+b0 Z
+bx Y
+bz X
+bx W
+bx V
+bx U
+bx T
 b11111111 S
 b1011000 R
 b11111111 Q
 b11111111 P
 b1011000 O
 b11111111 N
-bx M
-zL
-bz K
-b0 J
-bz I
-bz H
-bz G
-bx F
-bx E
-bx D
-bx C
-xB
-xA
-x@
-bx ?
-bx >
-bz =
-bz <
-bz ;
+b11111111 M
+b1011000 L
+b11111111 K
+b11111111 J
+b1011000 I
+b11111111 H
+b11111111 G
+b1011000 F
+b11111111 E
+b0 D
+b0 C
+b11000000 B
+b0 A
+b11000000 @
+0?
+b0 >
+0=
+b0 <
+b0 ;
 b0 :
-bx 9
+b11000000 9
 bz 8
 b0 7
-bz 6
-05
+b0 6
+bz 5
 b0 4
 03
-02
-bx 1
-bx 0
-b11111111 /
-b11111111 .
+b0 2
+01
+00
+b0 /
+b11000000 .
 b11111111 -
 b11111111 ,
 b11111111 +
-b0 *
-0)
-z(
-z'
-bz &
-z%
+b11111111 *
+b11111111 )
+b0z000 (
+b0 '
+0&
+bz %
 z$
-bz000zzzz #
+z#
 bz "
 z!
 $end
 #50
-1f
+1\
 #100
-0f
-1e
+0\
+1[
 #150
-bx000000 ^
-bx000000 j
-bx000000 r
-b11000000 t
-b0 q
-b0 s
-0n
-0o
-0p
-1f
-b0 ]
-b0 i
+bx000000 U
+bx000000 `
+bx000000 g
+b11000000 i
+b0 e
+b0 h
+b0 W
 b0 c
+b0 V
+b0 b
+1\
+b0 T
+b0 _
+b0 Y
 #200
-0f
+0\
 #250
-1f
+1\
 #300
-0f
+0\
 #350
-bx00x ^
-bx00x j
-bx00x r
-b11111001 t
-1n
-1o
-1p
-b1 q
-b1 s
-1f
-b1 ]
-b1 i
-b1 c
+bx00x U
+bx00x `
+bx00x g
+b11111001 i
+bx W
+b111 c
+bx V
+b111 b
+b1 e
+b1 h
+1d
+1\
+b1 T
+b1 _
+b1 Y
 #400
-0f
+0\
 #450
-1f
+1\
 #500
-0f
+0\
 #550
-1f
+1\
 #600
-bx0x00x00 ^
-bx0x00x00 j
-bx0x00x00 r
-b10100100 t
-b10 q
-b10 s
-0n
-0p
-0f
-b10 ]
-b10 i
-b10 c
+bx0x00x00 U
+bx0x00x00 `
+bx0x00x00 g
+b10100100 i
+b10 e
+b10 h
+1f
+b0 V
+b0 b
+0\
+b10 T
+b10 _
+b10 Y
 #650
-1f
+1\
 #700
-0f
+0\
 #750
-1f
+1\
 #800
-0f
+0\
 #850
-1f
+1\
 #900
-bx0xx0000 ^
-bx0xx0000 j
-bx0xx0000 r
-b10110000 t
-b11 q
-b11 s
+bx0xx0000 U
+bx0xx0000 `
+bx0xx0000 g
+b10110000 i
 0f
-b11 ]
-b11 i
-b11 c
+bx00 W
+b100 c
+b11 e
+b11 h
+0\
+b11 T
+b11 _
+b11 Y
 #950
-1f
+1\
 #1000
-0f
+0\
 #1050
-1f
+1\
 #1100
-0f
+0\
 #1150
-1f
+1\
 #1200
-0f
+0\
 #1250
-1f
+1\
 #1300
-0f
+0\
 #1350
-1f
+1\
 #1400
-0f
+0\
 #1450
-1f
+1\
 #1500
-0f
+0\
 #1550
-1f
+1\
 #1600
-0f
+0\
 #1650
-1f
+1\
 #1700
-0f
+0\
 #1750
-1f
+1\
 #1800
-0f
+0\
 #1850
-1f
+1\
 #1900
-0f
+0\
 #1950
-1f
+1\
 #2000
-0f
+0\
 #2050
-1f
+1\
 #2100
-0f
+0\
 #2150
-1f
+1\
 #2200
-0f
+0\
 #2250
-1f
+1\
 #2300
-0f
+0\
 #2350
-1f
+1\
 #2400
-0f
+0\
 #2450
-1f
+1\
 #2500
-0f
+0\
 #2550
-1f
+1\
 #2600
-0f
+0\
 #2650
-1f
+1\
 #2700
-0f
+0\
 #2750
-1f
+1\
 #2800
-0f
+0\
 #2850
-1f
+1\
 #2900
-0f
+0\
 #2950
-1f
+1\
 #3000
-0f
+0\
 #3050
-1f
+1\
 #3100
-0f
+0\
 #3150
-1f
+1\
 #3200
-0f
+0\
 #3250
-1f
+1\
 #3300
-0f
+0\
 #3350
-1f
+1\
 #3400
-0f
+0\
 #3450
-1f
+1\
 #3500
-0f
+0\
 #3550
-1f
+1\
 #3600
-0f
+0\
 #3650
-1f
+1\
 #3700
-0f
+0\
 #3750
-1f
+1\
 #3800
-0f
+0\
 #3850
-1f
+1\
 #3900
-0f
+0\
 #3950
-1f
+1\
 #4000
-0f
+0\
 #4050
-1f
+1\
 #4100
-0f
+0\
 #4150
-1f
+1\
 #4200
-0f
+0\
 #4250
-1f
+1\
 #4300
-0f
+0\
 #4350
-1f
+1\
 #4400
-0f
+0\
 #4450
-1f
+1\
 #4500
-0f
+0\
 #4550
-1f
+1\
 #4600
-0f
+0\
 #4650
-1f
+1\
 #4700
-0f
+0\
 #4750
-1f
+1\
 #4800
-0f
+0\
 #4850
-1f
+1\
 #4900
-0f
+0\
 #4950
-1f
+1\
 #5000
-0f
+0\
 #5050
-1f
+1\
 #5100
-0f
+0\
 #5150
-1f
+1\
 #5200
-0f
+0\
 #5250
-1f
+1\
 #5300
-0f
+0\
 #5350
-1f
+1\
 #5400
-0f
+0\
 #5450
-1f
+1\
 #5500
-0f
+0\
 #5550
-1f
+1\
 #5600
-0f
+0\
 #5650
-1f
+1\
 #5700
-0f
+0\
 #5750
-1f
+1\
 #5800
-0f
+0\
 #5850
-1f
+1\
 #5900
-0f
+0\
 #5950
-1f
+1\
 #6000
-0f
+0\
 #6050
-1f
+1\
 #6100
-0f
+0\
 #6150
-1f
+1\
 #6200
-0f
+0\
 #6250
-1f
+1\
 #6300
-0f
+0\
 #6350
-1f
+1\
 #6400
-0f
+0\
 #6450
-1f
+1\
 #6500
-0f
+0\
 #6550
-1f
+1\
 #6600
-0f
+0\
 #6650
-1f
+1\
 #6700
-0f
+0\
 #6750
-1f
+1\
 #6800
-0f
+0\
 #6850
-1f
+1\
 #6900
-0f
+0\
 #6950
-1f
+1\
 #7000
-0f
+0\
 #7050
-1f
+1\
 #7100
-0f
+0\
 #7150
-1f
+1\
 #7200
-0f
+0\
 #7250
-1f
+1\
 #7300
-0f
+0\
 #7350
-1f
+1\
 #7400
-0f
+0\
 #7450
-1f
+1\
 #7500
-0f
+0\
 #7550
-1f
+1\
 #7600
-0f
+0\
 #7650
-1f
+1\
 #7700
-0f
+0\
 #7750
-1f
+1\
 #7800
-0f
+0\
 #7850
-1f
+1\
 #7900
-0f
+0\
 #7950
-1f
+1\
 #8000
-0f
+0\
 #8050
-1f
+1\
 #8100
-0f
+0\
 #8150
-1f
+1\
 #8200
-0f
+0\
 #8250
-1f
+1\
 #8300
-0f
+0\
 #8350
-1f
+1\
 #8400
-0f
+0\
 #8450
-1f
+1\
 #8500
-0f
+0\
 #8550
-1f
+1\
 #8600
-0f
+0\
 #8650
-1f
+1\
 #8700
-0f
+0\
 #8750
-1f
+1\
 #8800
-0f
+0\
 #8850
-1f
+1\
 #8900
-0f
+0\
 #8950
-1f
+1\
 #9000
-0f
+0\
 #9050
-1f
+1\
 #9100
-0f
+0\
 #9150
-1f
+1\
 #9200
-0f
+0\
 #9250
-1f
+1\
 #9300
-0f
+0\
 #9350
-1f
+1\
 #9400
-0f
+0\
 #9450
-1f
+1\
 #9500
-0f
+0\
 #9550
-1f
+1\
 #9600
-0f
+0\
 #9650
-1f
+1\
 #9700
-0f
+0\
 #9750
-1f
+1\
 #9800
-0f
+0\
 #9850
-1f
+1\
 #9900
-0f
+0\
 #9950
-1f
+1\
 #10000
-0f
+0\
 #10050
-1f
+1\
 #10100
-0f
+0\
 #10150
-1f
+1\
 #10200
-0f
+0\
 #10250
-1f
+1\
 #10300
-0f
+0\
 #10350
-1f
+1\
 #10400
-0f
+0\
 #10450
-1f
+1\
 #10500
-0f
+0\
 #10550
-1f
+1\
 #10600
-0f
+0\
 #10650
-1f
+1\
 #10700
-0f
+0\
 #10750
-1f
+1\
 #10800
-0f
+0\
 #10850
-1f
+1\
 #10900
-0f
+0\
 #10950
-1f
+1\
 #11000
-0f
+0\
 #11050
-1f
+1\
 #11100
-0f
+0\
 #11150
-1f
+1\
 #11200
-0f
+0\
 #11250
-1f
+1\
 #11300
-0f
+0\
 #11350
-1f
+1\
 #11400
-0f
+0\
 #11450
-1f
+1\
 #11500
-0f
+0\
 #11550
-1f
+1\
 #11600
-0f
+0\
 #11650
-1f
+1\
 #11700
-0f
+0\
 #11750
-1f
+1\
 #11800
-0f
+0\
 #11850
-1f
+1\
 #11900
-0f
+0\
 #11950
-1f
+1\
 #12000
-0f
+0\
 #12050
-1f
+1\
 #12100
-0f
+0\
 #12150
-1f
+1\
 #12200
-0f
+0\
 #12250
-1f
+1\
 #12300
-0f
+0\
 #12350
-1f
+1\
 #12400
-0f
+0\
 #12450
-1f
+1\
 #12500
-0f
+0\
 #12550
-1f
+1\
 #12600
-0f
+0\
 #12650
-1f
+1\
 #12700
-0f
+0\
 #12750
-1f
+1\
 #12800
-0f
+0\
 #12850
-1f
+1\
 #12900
-0f
+0\
 #12950
-1f
+1\
 #13000
-0f
+0\
