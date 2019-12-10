@@ -11,10 +11,11 @@ module tb_Lab3();
     wire [7:0] HEX4;
     wire [7:0] HEX5;
     wire [1:0] K;
-    wire [9:0] sw;
+    reg [9:0] sw = 9'b0;
     wire [9:0] led;
 
     Lab3 L0(
+        .ADC_CLK_10(clk),
         .HEX0(HEX0),
         .HEX1(HEX1),
         .HEX2(HEX2),
@@ -35,6 +36,7 @@ module tb_Lab3();
 
     always
         #5 clk = ~clk;
+         sw = ~sw;
 
     initial
         begin

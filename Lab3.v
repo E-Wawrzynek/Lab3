@@ -47,19 +47,11 @@ module Lab3(
 
 	wire s_clk;
 
-	clock_divider #(5_000_000) C0(.clk(ADC_CLK_10), .reset_n(reset_latch), .slower_clk(s_clk));
+	clock_divider #(1_000_000) C0(.clk(ADC_CLK_10), .reset_n(reset_latch), .slower_clk(s_clk));
 
-	//wire turn_side_w;
+
 	reg turn_side_r = 1'b0;
-	//assign SW[1] = turn_side_w;
 
-	// always @(negedge KEY[1])
-	// 	begin
-	// 		if(SW[1] == 1)
-	// 			turn_side_r <= 1'b1;
-	// 		else
-	// 			turn_side_r <= 1'b0;
-	// 	end
 	always @(negedge KEY[1])
 		begin
 			turn_side_r <= ~turn_side_r;
@@ -76,6 +68,6 @@ module Lab3(
 
 	CSL S0(.clk(s_clk), .reset_n(reset_latch), .NextState(NextState), .CurrentState(CurrentState));
 	NSL N0(.CurrentState(CurrentState), .SW(SW[1:0]), .turn_side_r(turn_side_r), .NextState(NextState));
-	OL O0(.CurrentState(CurrentState), .SW(SW[1:0]), .HEX0(HEX0), .LEDR_L(LEDR[9:7]), .LEDR_R(LEDR[2:0]));
+	OL O0(.CurrentState(CurrentState), .clk(s_clk), .reset_n(reset_latch), .SW(SW[1:0]), .HEX0(HEX0), .LEDR_L(LEDR[9:7]), .LEDR_R(LEDR[2:0]));
 
 endmodule
