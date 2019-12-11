@@ -66,8 +66,8 @@ module Lab3(
 	wire [2:0] CurrentState;
 	wire [2:0] NextState;
 
-	CSL S0(.clk(s_clk), .reset_n(reset_latch), .NextState(NextState), .CurrentState(CurrentState));
-	NSL N0(.CurrentState(CurrentState), .SW(SW[1:0]), .turn_side_r(turn_side_r), .NextState(NextState));
+	CSL S0(.clk(s_clk), .reset_n(reset_latch), .NextState(NextState), .CurrentState(CurrentState), .SW(SW), .K(KEY));
+	NSL N0(.CurrentState(CurrentState), .SW(SW[1:0]), .turn_side_r(turn_side_r), .NextState(NextState), .K(KEY));
 	OL O0(.CurrentState(CurrentState), .clk(s_clk), .reset_n(reset_latch), .SW(SW[1:0]), .HEX0(HEX0), .LEDR_L(LEDR[9:7]), .LEDR_R(LEDR[2:0]));
 
 endmodule

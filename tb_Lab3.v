@@ -10,8 +10,8 @@ module tb_Lab3();
     wire [7:0] HEX2;
     wire [7:0] HEX4;
     wire [7:0] HEX5;
-    wire [1:0] K;
-    reg [9:0] sw = 9'b0;
+    reg [1:0] K = 9'b00;
+    reg [9:0] sw = 9'b000000000;
     wire [9:0] led;
 
     Lab3 L0(
@@ -36,7 +36,20 @@ module tb_Lab3();
 
     always
         #5 clk = ~clk;
-         sw = ~sw;
+
+    initial
+        begin
+            #10 sw[1:0] = 2'b01;
+            #10 sw[1:0] = 2'b10;
+            #10 K[1] = 0;
+            #10 K[1] = 1;
+            #10 sw[1:0] = 2'b11;
+            #10 sw[1:0] = 2'b00;
+            #10 sw[1:0] = 2'b10;
+            #10 K[1] = 1;
+            #10 K[1] = 0;
+         end
+
 
     initial
         begin

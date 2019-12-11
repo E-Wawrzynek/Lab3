@@ -2,7 +2,9 @@ module CSL(
 	input clk,
 	input reset_n,
 	input [2:0] NextState,
-	output reg [2:0] CurrentState
+	output reg [2:0] CurrentState,
+    input [9:0] SW,
+    input [1:0] K
 );
 
     parameter IDLE = 3'b000;

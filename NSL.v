@@ -2,7 +2,8 @@ module NSL(
 	input [2:0] CurrentState,
     input [1:0] SW,
     input turn_side_r,
-	output [2:0] NextState
+	output [2:0] NextState, 
+    input [1:0] K
 );
 
     parameter IDLE = 3'b000;
