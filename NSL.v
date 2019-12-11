@@ -1,5 +1,6 @@
 module NSL(
 	input [2:0] CurrentState,
+    input clk,
     input [1:0] SW,
     input turn_side_r,
 	output [2:0] NextState, 

@@ -8,7 +8,7 @@ module clock_divider(
 
     parameter clk_div = 0;
 
-    reg [23:0] div_cntr; //calculate correct size!
+    reg [31:0] div_cntr; //calculate correct size!
     reg slw_clk;
 
     always @(posedge clk, negedge reset_n)

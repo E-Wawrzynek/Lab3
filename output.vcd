@@ -1,5 +1,5 @@
 $date
-	Tue Dec 10 17:45:27 2019
+	Tue Dec 10 21:44:45 2019
 $end
 $version
 	Icarus Verilog
@@ -53,89 +53,91 @@ $var wire 3 A CurrentState [2:0] $end
 $var reg 3 B NextState_temp [2:0] $end
 $upscope $end
 $scope module O0 $end
-$var wire 2 C SW [1:0] $end
+$var wire 2 C K [1:0] $end
+$var wire 2 D SW [1:0] $end
 $var wire 1 0 clk $end
 $var wire 1 : reset_n $end
-$var wire 8 D HEX0 [7:0] $end
-$var wire 3 E CurrentState [2:0] $end
-$var reg 3 F LEDR_L [2:0] $end
-$var reg 3 G LEDR_R [2:0] $end
-$var reg 1 H hazard_r $end
-$var reg 8 I num [7:0] $end
-$var reg 1 J turn_cnt $end
+$var wire 8 E HEX0 [7:0] $end
+$var wire 3 F CurrentState [2:0] $end
+$var reg 3 G LEDR_L [2:0] $end
+$var reg 3 H LEDR_R [2:0] $end
+$var reg 1 I hazard_r $end
+$var reg 8 J num [7:0] $end
+$var reg 2 K turn_cnt [1:0] $end
 $scope module S0 $end
-$var wire 8 K H [7:0] $end
-$var wire 8 L NUM [7:0] $end
-$var reg 8 M value [7:0] $end
+$var wire 8 L H [7:0] $end
+$var wire 8 M NUM [7:0] $end
+$var reg 8 N value [7:0] $end
 $upscope $end
 $upscope $end
 $scope module S0 $end
-$var wire 2 N K [1:0] $end
-$var wire 3 O NextState [2:0] $end
-$var wire 10 P SW [9:0] $end
+$var wire 2 O K [1:0] $end
+$var wire 3 P NextState [2:0] $end
+$var wire 10 Q SW [9:0] $end
 $var wire 1 0 clk $end
 $var wire 1 : reset_n $end
-$var reg 3 Q CurrentState [2:0] $end
+$var reg 3 R CurrentState [2:0] $end
 $upscope $end
 $scope module U1 $end
-$var wire 8 R H [7:0] $end
-$var wire 8 S NUM [7:0] $end
-$var reg 8 T value [7:0] $end
+$var wire 8 S H [7:0] $end
+$var wire 8 T NUM [7:0] $end
+$var reg 8 U value [7:0] $end
 $upscope $end
 $scope module U2 $end
-$var wire 8 U H [7:0] $end
-$var wire 8 V NUM [7:0] $end
-$var reg 8 W value [7:0] $end
+$var wire 8 V H [7:0] $end
+$var wire 8 W NUM [7:0] $end
+$var reg 8 X value [7:0] $end
 $upscope $end
 $scope module U3 $end
-$var wire 8 X H [7:0] $end
-$var wire 8 Y NUM [7:0] $end
-$var reg 8 Z value [7:0] $end
+$var wire 8 Y H [7:0] $end
+$var wire 8 Z NUM [7:0] $end
+$var reg 8 [ value [7:0] $end
 $upscope $end
 $scope module U4 $end
-$var wire 8 [ H [7:0] $end
-$var wire 8 \ NUM [7:0] $end
-$var reg 8 ] value [7:0] $end
+$var wire 8 \ H [7:0] $end
+$var wire 8 ] NUM [7:0] $end
+$var reg 8 ^ value [7:0] $end
 $upscope $end
 $scope module U5 $end
-$var wire 8 ^ H [7:0] $end
-$var wire 8 _ NUM [7:0] $end
-$var reg 8 ` value [7:0] $end
+$var wire 8 _ H [7:0] $end
+$var wire 8 ` NUM [7:0] $end
+$var reg 8 a value [7:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b11111111 `
-b1011000 _
+b11111111 a
+b1011000 `
+b11111111 _
 b11111111 ^
-b11111111 ]
-b1011000 \
+b1011000 ]
+b11111111 \
 b11111111 [
-b11111111 Z
-b1011000 Y
+b1011000 Z
+b11111111 Y
 b11111111 X
-b11111111 W
-b1011000 V
+b1011000 W
+b11111111 V
 b11111111 U
-b11111111 T
-b1011000 S
-b11111111 R
+b1011000 T
+b11111111 S
+b0 R
 b0 Q
 b0 P
 b0 O
-b0 N
-b11000000 M
-b0 L
-b11000000 K
-0J
-b0 I
-0H
+b11000000 N
+b0 M
+b11000000 L
+b0 K
+b0 J
+0I
+b0 H
 b0 G
 b0 F
-b0 E
-b11000000 D
+b11000000 E
+b0 D
 b0 C
 b0 B
 b0 A
@@ -176,23 +178,43 @@ $end
 b1 <
 1*
 #100
+b1 1
+b1 ?
+b1 P
+b1 B
 b1 @
-b1 C
+b1 D
 0*
 b1 +
 b1 /
-b1 P
+b1 Q
 1)
 #150
 b10 <
 1*
 #200
+b11111001 '
+b11111001 8
+b11111001 E
+b11111001 L
+b11111001 N
+b11 1
+b11 ?
+b11 P
+b11 B
+1I
+b1 J
+b1 M
 b10 @
-b10 C
+b10 D
+b1 9
+b1 A
+b1 F
+b1 R
 0*
 b10 +
 b10 /
-b10 P
+b10 Q
 #250
 b11 <
 1*
@@ -202,41 +224,101 @@ b11 <
 b100 <
 1*
 #400
+b10110000 '
+b10110000 8
+b10110000 E
+b10110000 L
+b10110000 N
+b11 J
+b11 M
+b1 K
+b11 9
+b11 A
+b11 F
+b11 R
 0*
 b10 (
 b10 ,
 b10 >
-b10 N
+b10 C
+b10 O
 #450
 b101 <
 1*
 #500
+b1 1
+b1 ?
+b1 P
+b1 B
+b100 !
+b100 2
+b100 H
+b10 K
 b11 @
-b11 C
+b11 D
 0*
 b11 +
 b11 /
-b11 P
+b11 Q
 #550
 b110 <
 1*
 #600
+b11111001 '
+b11111001 8
+b11111001 E
+b11111001 L
+b11111001 N
+b0 1
+b0 ?
+b0 P
+b0 B
+b111 H
+b1110000111 !
+b1110000111 2
+b111 G
+0I
+b1 J
+b1 M
 b0 @
-b0 C
+b0 D
+b1 9
+b1 A
+b1 F
+b1 R
 0*
 b0 +
 b0 /
-b0 P
+b0 Q
 #650
 b111 <
 1*
 #700
+b11000000 '
+b11000000 8
+b11000000 E
+b11000000 L
+b11000000 N
+b11 1
+b11 ?
+b11 P
+b11 B
+b0 H
+b0 !
+b0 2
+b0 G
+b0 J
+b0 M
 b10 @
-b10 C
+b10 D
+b0 9
+b0 A
+b0 F
+b0 R
 0*
 b10 +
 b10 /
-b10 P
+b10 Q
 #750
 b1000 <
 1*
@@ -246,12 +328,28 @@ b1000 <
 b1001 <
 1*
 #900
+b10110000 '
+b10110000 8
+b10110000 E
+b10110000 L
+b10110000 N
 0;
+b11 J
+b11 M
+b110 !
+b110 2
+b110 H
+b11 K
+b11 9
+b11 A
+b11 F
+b11 R
 0*
 b0 (
 b0 ,
 b0 >
-b0 N
+b0 C
+b0 O
 #950
 b1010 <
 1*
