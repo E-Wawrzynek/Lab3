@@ -3,7 +3,7 @@ module OL(
     input clk,
     input reset_n,
     input [1:0] SW,
-    input [1:0] K,
+    //input [1:0] K,
     //input turn_side,
     output [7:0] HEX0,
     output reg [2:0] LEDR_L,
